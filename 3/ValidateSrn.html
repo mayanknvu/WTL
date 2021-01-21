@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+    <title>Validate SRN</title>
+    <script>
+        function validateSRN()
+        {
+        var val=document.getElementById("SRN").value;
+        if(val.search(/^[R r]+[0-9]+[0-9]+[A-Z a-z]+[A-Z a-z]+[0-9]+[0-9]+[0-9]+$/)==-1 || val.length!=8)
+            {
+                return -1;
+            }
+            return 1;
+        }
+
+        function validate(){
+            srn = validateSRN();
+            if(srn===1){
+                alert("Success!!")
+            }
+            else{
+                alert("Invalid SRN");
+            }
+        }
+</script>
+</head>
+<body style="background-color: coral;">
+    <center>
+    <label for "SRN" style="color: White;">Enter SRN :</label><br>
+    <input type="text" id="SRN"><br>
+    <button onclick="validate();">Validate</button>
+    </center>
+</body>
+</html>
